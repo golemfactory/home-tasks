@@ -1,6 +1,8 @@
 # SIMPLE POLL
 
-Your task would be to implement a simple auction system using blockchain technology. Please implement smart contract with following capabilities:
+Your task would be to implement a simple auction system using blockchain technology. NFT owners should be able to put their NFT on an auction where other users will be bidding for them with GLMs.
+
+Please implement smart contract with following capabilities:
 
 1. **StartAuction**
 
@@ -35,6 +37,8 @@ Your task would be to implement a simple auction system using blockchain technol
 
    Current bid needs to be higher than the previous bid.
 
+   Cannot bid after auction is finished (after block with particular number is mined).
+
 1. **Pass**
 
    Can be called only if someone else outbids the caller's previous bid. Returns locked funds to the caller's address.
@@ -61,3 +65,8 @@ Attach additional file with description of several test scenarios.
 _Optional_
 
 If that's possible please record a short demonstration video showcasing your code and it's usage.
+
+# Miscellaneous
+
+_GLM token on Mumbai testnet_
+https://mumbai.polygonscan.com/token/0x2036807B0B3aaf5b1858EE822D0e111fDdac7018
