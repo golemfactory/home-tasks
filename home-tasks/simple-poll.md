@@ -69,7 +69,7 @@ Please implement smart contract with following features:
 
    Can be called only by users who added options and locked their funds in a contract.
 
-   Can be called only after voting has beed finished.
+   Can be called only after voting has been finished.
 
    If caller has some funds locked in a contract this method should transfer them back to his address.
 
