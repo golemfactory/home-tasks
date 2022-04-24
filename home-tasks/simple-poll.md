@@ -1,51 +1,81 @@
 # SIMPLE POLL
 
-Your task is to implement a simple auction system using blockchain technology. NFT owners should be able to put their NFT on an auction where other users will be bidding for them with GLMs.
+The objective of this task is to implement a simple poll using blockchain technology.
 
-Please implement smart contract with following capabilities:
+Flow should look like that:
 
-1. **StartAuction**
+- Contract admin defines topic of a poll
+- Contract admin opens adding options to a poll
+- Users can add up to 5 options
+- Contract admin closes adding options to a poll
+- Contract admin starts voting
+- Users can vote
+- Contract admin finishes voting
+- Users can get votes stats
 
-   Can be called by any address. Initializes auction of NFT owned by caller.
+Please implement smart contract with following features:
 
-   _Suggested params:_
+1. **DefineQuestion**
 
-   - NFT implementing EIP 721
-   - minimum amount required for finishing auction
-   - block number indicating when auction will finish
+   Can be called only by whitelisted addresses.
 
-   \
-   One address can start only one auction at the time.
+   Sets the topic of a poll.
 
-1. **CancelAuction**
+   Can be called only when there is no running poll.
 
-   Finishes auction without completing transfer. If NFT's ownership was moved to contract it should be returned to it's owner.
+1. **AllowAddingOptions**
 
-   Can be called only if there are no bids.
+   Can be called only by whitelisted addresses.
 
-1. **CompleteAuction**
+   Users are now allowed to add options.
 
-   Can be called only after block number defined in StartAuction has already been mined.
+1. **DisallowAddingOptions**
 
-   If maximum bid is lower than minimum amount defined in StartAuction NFT is returned to owner and auction is closed.
+   Can be called only by whitelisted addresses.
 
-   Otherwise NFT should be transferred to highest bidder and his bid should be transferred to auction owner.
+   Users are now disallowed to add options.
 
-1. **Bid**
+1. **AddOption**
 
-   Sets the current bid value for given address in GLM. (total bid amount should be locked in contract. If given address outbids it’s previous bid then additional GLMs should be added to contract’s treasury)
+   Everyone can call this function.
 
-   Current bid needs to be higher than the previous bid.
+   User need to lock 50 GLM in contract to add poll option (expressed as string)
 
-   Cannot bid after auction is finished (after block with particular number is mined).
+   Maximum number of options is 5. If it is reached before _DisallowAddingOptions_ has been called method take no effect.
 
-1. **Pass**
+1. **StartVoting**
 
-   Can be called only if someone else outbids the caller's previous bid. Returns locked funds to the caller's address.
+   Can be called only by whitelisted addresses.
+
+   Disallows adding options.
+
+   Voting can be done now.
+
+1. **Vote**
+
+   Everyone can call this function.
+
+   It should cost 1 GLMs to vote. Those funds are not returned after voting.
+
+   Every address can vote only once.
+
+1. **FinishVoting**
+
+   Can be called only by whitelisted addresses.
+
+   Transfers funds gathered from voting to caller’s address.
 
 1. **Claim**
 
-   Can be called only if the auction is finished. Returns locked funds to the caller's address.
+   Can be called only by users who added options and locked their funds in a contract.
+
+   Can be called only after voting has beed finished.
+
+   If caller has some funds locked in a contract this method should transfer them back to his address.
+
+1. **Reset**
+
+   stops voting, disallows adding options, clears all options and votes, clears question
 
 Smart contract should be implemented using solidity. Using additional libraries like OpenZeppelin is absolutely ok.
 
