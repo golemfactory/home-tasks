@@ -45,7 +45,7 @@ Please implement smart contract with following capabilities:
 
 1. **Claim**
 
-   Can be called only if the auction is finished. Returns funds to the caller's address.
+   Can be called only if the auction is finished. Returns locked funds to the caller's address.
 
 Smart contract should be implemented using solidity. Using additional libraries like OpenZeppelin is absolutely ok.
 
