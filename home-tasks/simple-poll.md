@@ -1,6 +1,6 @@
 # SIMPLE POLL
 
-Your task would be to implement a simple auction system using blockchain technology. NFT owners should be able to put their NFT on an auction where other users will be bidding for them with GLMs.
+Your task is to implement a simple auction system using blockchain technology. NFT owners should be able to put their NFT on an auction where other users will be bidding for them with GLMs.
 
 Please implement smart contract with following capabilities:
 
