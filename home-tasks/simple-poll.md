@@ -2,16 +2,16 @@
 
 The objective of this task is to implement a simple poll using blockchain technology.
 
-Flow should look like that:
+The flow should look as follows:
 
-- Contract admin defines topic of a poll
-- Contract admin opens adding options to a poll
+- Contract admin defines the topic of the poll
+- Contract admin opens adding options to the poll
 - Users can add up to 5 options
-- Contract admin closes adding options to a poll
+- Contract admin closes adding options to the poll
 - Contract admin starts voting
 - Users can vote
-- Contract admin finishes voting
-- Users can get votes stats
+- Contract admin closes voting
+- Users can get vote stats
 
 Please implement smart contract with following features:
 
@@ -39,7 +39,7 @@ Please implement smart contract with following features:
 
    Everyone can call this function.
 
-   User need to lock 50 GLM in contract to add poll option (expressed as string)
+   Users need to lock 50 GLM in the contract to add a poll option (expressed as a string)
 
    Maximum number of options is 5. If it is reached before _DisallowAddingOptions_ has been called method take no effect.
 
@@ -81,9 +81,9 @@ Smart contract should be implemented using solidity. Using additional libraries 
 
 # Deployment
 
-Deploy smart contract on Polygon’s Mumbai. Provide simple application (js, python, c#, java, rust …) demonstrating interactions with smart contract.
+Deploy the contract on Polygon’s Mumbai. Provide a simple application (js, python, c#, java, rust …) demonstrating interactions with smart contract.
 
-Please upload source code of smart contract and aforementioned application to a github repository.
+Please upload source code of the smart contract and aforementioned application to a github repository.
 
 # Demo
 
