@@ -2,7 +2,7 @@
 
 Your task is to implement a simple auction system using blockchain technology. NFT owners should be able to put their NFT on an auction where other users will be bidding for them with GLMs.
 
-Please implement smart contract with following capabilities:
+Please implement a smart contract with following capabilities:
 
 1. **StartAuction**
 
@@ -11,25 +11,25 @@ Please implement smart contract with following capabilities:
    _Suggested params:_
 
    - NFT implementing EIP 721
-   - minimum amount required for finishing auction
-   - block number indicating when auction will finish
+   - minimum amount required to complete the auction
+   - block number indicating when the auction will finish
 
    \
    One address can start only one auction at the time.
 
 1. **CancelAuction**
 
-   Finishes auction without completing transfer. If NFT's ownership was moved to contract it should be returned to it's owner.
+   Finishes the auction without completing transfer. If NFT's ownership was moved to the auction contract it should be returned to it's owner. 
 
    Can be called only if there are no bids.
 
 1. **CompleteAuction**
 
-   Can be called only after block number defined in StartAuction has already been mined.
+   Can be called only after the block number defined in StartAuction has already been mined.
 
-   If maximum bid is lower than minimum amount defined in StartAuction NFT is returned to owner and auction is closed.
+   If maximum bid is lower than minimum amount defined in StartAuction, NFT is returned to owner and the auction is closed.
 
-   Otherwise NFT should be transferred to highest bidder and his bid should be transferred to auction owner.
+   Otherwise NFT should be transferred to the highest bidder and his bid should be transferred to auction owner.
 
 1. **Bid**
 
@@ -47,13 +47,13 @@ Please implement smart contract with following capabilities:
 
    Can be called only if the auction is finished. Returns locked funds to the caller's address.
 
-Smart contract should be implemented using solidity. Using additional libraries like OpenZeppelin is absolutely ok.
+The contract should be implemented using Solidity. Using additional libraries like OpenZeppelin is absolutely ok.
 
 # Deployment
 
-Deploy smart contract on Polygon’s Mumbai. Provide simple application (js, python, c#, java, rust …) demonstrating interactions with smart contract.
+Deploy smart contract on Polygon’s Mumbai. Provide simple application (js, python, c#, java, rust …) demonstrating interactions with the smart contract.
 
-Please upload source code of smart contract and aforementioned application to a github repository.
+Please upload source code of the smart contract and aforementioned application to a github repository.
 
 # Demo
 
