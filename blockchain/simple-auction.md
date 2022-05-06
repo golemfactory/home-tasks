@@ -53,7 +53,7 @@ The contract should be implemented using Solidity. Using additional libraries li
 
 Deploy smart contract on Polygon’s Mumbai. Provide simple application (js, python, c#, java, rust …) demonstrating interactions with the smart contract.
 
-Please upload source code of the smart contract and aforementioned application to a github repository.
+Please upload source code of the smart contract and aforementioned application to a your github account into a separate repository.
 
 # Demo
 
